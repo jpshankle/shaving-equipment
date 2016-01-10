@@ -15,7 +15,7 @@
       (sphere 40)
       (with-fs 1)
       (with-fa 1)
-      (translate [0 0 25]))
+      (translate [0 0 32]))
      ))
   (spit "bowl.scad" (write-scad bowlprim)))
 
