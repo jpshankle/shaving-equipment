@@ -7,7 +7,7 @@
   "the outer part of the shave bowl"
   []
   (->>
-   (cylinder 45 30)
+   (cylinder 45 35)
    (with-fs 1)
    (with-fa 1)))
 
@@ -15,10 +15,10 @@
   "the inner part of the shave bowl"
   []
   (->>
-   (sphere 40)
+   (cylinder 42 40)
    (with-fs 1)
    (with-fa 1)
-   (translate [0 0 32])))
+   (translate [0 0 10])))
 
 (defn bowl
   "a bowl to hold shave soap"
