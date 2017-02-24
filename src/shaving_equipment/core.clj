@@ -3,6 +3,25 @@
   (require [scad-clj.scad :refer :all]
            [scad-clj.model :refer :all]))
 
+(defn the-diff
+  "calculate the difference"
+  []
+  (->>
+    (cylinder 5 10)
+    (with-fn 6)
+    (translate [15 0 0])))
+
+(defn brush-base
+  "create a brush base"
+  []
+  (difference
+    (minkowski
+      (cube 80 50 5)
+      (->>
+        (cylinder 3 1)
+        (with-fn 40)))
+    (the-diff)))
+
 (defn outerBowl
   "the outer part of the shave bowl"
   []
@@ -32,4 +51,8 @@
  [& args]
  (spit "dist/bowl.scad"
    (write-scad
-     (bowl))))
+     (bowl)))
+
+ (spit "dist/brush-base.scad"
+  (write-scad
+    (brush-base))))
