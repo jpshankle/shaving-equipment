@@ -7,7 +7,7 @@
   "calculate the difference"
   []
   (->>
-    (cylinder 5 10)
+    (cylinder 4.1 10)
     (with-fn 6)
     (translate [15 0 0])))
 
@@ -21,6 +21,13 @@
         (cylinder 3 1)
         (with-fn 40)))
     (the-diff)))
+
+(defn brush-post
+  "create a brush post"
+  []
+  (->>
+    (cylinder 4 110)
+    (with-fn 6)))
 
 (defn outerBowl
   "the outer part of the shave bowl"
@@ -55,4 +62,8 @@
 
  (spit "dist/brush-base.scad"
   (write-scad
-    (brush-base))))
+    (brush-base)))
+
+    (spit "dist/brush-post.scad"
+     (write-scad
+       (brush-post))))
